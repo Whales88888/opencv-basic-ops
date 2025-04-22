@@ -10,12 +10,12 @@ Thao tác cơ bản với ảnh sử dụng OpenCV:
 - Cắt/dán vùng ảnh (ROI)
 - Lưu ảnh kết quả
 
-## File nộp
+
 - `opencv_basic_ops.py`: Mã nguồn chính
 - `opencv-logo.png`: Ảnh đầu vào (cần đặt cùng thư mục)
 - `opencv_basic_ops_result.png`: Ảnh đầu ra sau khi xử lý
 
-## Cách chạy
+
 ```bash
 python opencv_basic_ops.py
 pip install opencv-python
