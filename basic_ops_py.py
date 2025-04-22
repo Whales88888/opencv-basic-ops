@@ -11,84 +11,12 @@ Original file is located at
 !pip install opencv-python numpy
 !pip install matplotlib
 
-import cv2 as cv
-import numpy as np
-import matplotlib.pyplot as plt # Nhập module pyplot từ matplotlib
-
-# Truy cập và sửa đổi giá trị pixel
-img = cv.imread('messi5.jpg')
-
-# Kiểm tra xem hình ảnh đã được tải thành công chưa
-if img is None:
-    print("Lỗi: Không thể tải hình ảnh. Vui lòng kiểm tra đường dẫn tệp và đảm bảo hình ảnh tồn tại.")
-else:
-    px = img[100,100]
-    print( px )
-
-    # truy cập pixel màu xanh lam
-    blue = img[100,100,0]
-    print( blue )
-
-    img[100,100] = [255,255,255]
-    print( img[100,100] )
-
-    # truy cập giá trị ĐỎ
-    red = img.item(10,10,2)
-    print( red )
-
-    # sửa đổi giá trị ĐỎ
-    img.itemset((10,10,2),100)
-    red = img.item(10,10,2)
-    print( red )
-
-    # Thuộc tính hình ảnh
-    print( img.shape )
-    print( img.size )
-    print( img.dtype )
-
-    # Vùng quan tâm của hình ảnh (ROI)
-    ball = img[280:340, 330:390]
-    img[273:333, 100:160] = ball
-
-    # Tách và hợp nhất các kênh hình ảnh
-    b,g,r = cv.split(img)
-    img = cv.merge((b,g,r))
-
-    b = img[:,:,0]
-    img[:,:,2] = 0
-
-    # Tạo viền cho hình ảnh (Padding)
-    BLUE = [255,0,0]
-    img1 = cv.imread('opencv-logo.png')
-
-    # Kiểm tra xem hình ảnh đã được tải thành công chưa
-    if img1 is None:
-        print("Lỗi: Không thể tải hình ảnh. Vui lòng kiểm tra đường dẫn tệp và đảm bảo hình ảnh tồn tại.")
-    else:
-        replicate = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_REPLICATE)
-        reflect = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_REFLECT)
-        reflect101 = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_REFLECT_101)
-        wrap = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_WRAP)
-        constant= cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_CONSTANT,value=BLUE)
-
-        plt.subplot(231),plt.imshow(img1,'gray'),plt.title('ORIGINAL')
-        plt.subplot(232),plt.imshow(replicate,'gray'),plt.title('REPLICATE')
-        plt.subplot(233),plt.imshow(reflect,'gray'),plt.title('REFLECT')
-        plt.subplot(234),plt.imshow(reflect101,'gray'),plt.title('REFLECT_101')
-        plt.subplot(235),plt.imshow(wrap,'gray'),plt.title('WRAP')
-        plt.subplot(236),plt.imshow(constant,'gray'),plt.title('CONSTANT')
-
-        plt.show()
-
-
 
 import cv2
 import numpy as np
 
-# Khởi tạo: Đọc ảnh từ file
-# Kiểm tra xem tệp 'opencv-logo.png' có tồn tại trong thư mục hiện tại hay không.
-# Nếu không, hãy cung cấp đường dẫn tuyệt đối đến tệp hình ảnh.
-img = cv2.imread('opencv-logo.png')  # Đảm bảo ảnh nằm cùng thư mục
+# Đảm bảo ảnh nằm cùng thư mục
+img = cv2.imread('opencv-logo.png')  
 
 # Kiểm tra xem hình ảnh đã được tải chưa
 if img is None:
