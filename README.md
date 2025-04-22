@@ -16,7 +16,23 @@ Thao tác cơ bản với ảnh sử dụng OpenCV:
 - `opencv_basic_ops_result.png`: Ảnh đầu ra sau khi xử lý
 
 
-```bash
-python opencv_basic_ops.py
+Run:
+pip install opencv-python
+
+
+# Bài tập Thị giác Máy tính – Chuyển đổi Không gian Màu với OpenCV
+
+## Nội dung
+Bài tập này thực hiện chuyển đổi không gian màu của ảnh từ BGR sang:
+1. Grayscale (Đen trắng)
+2. HSV (Hue, Saturation, Value)
+
+## File nộp
+- `opencv_colorspaces.py`: Mã nguồn bài tập
+- `opencv-logo.png`: Ảnh gốc (cần đặt cùng thư mục)
+- `opencv_colorspace_gray.png`: Ảnh sau khi chuyển sang Grayscale
+- `opencv_colorspace_hsv.png`: Ảnh sau khi chuyển sang HSV
+
+Run:
 pip install opencv-python
 
