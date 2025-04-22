@@ -18,4 +18,5 @@ Thao tác cơ bản với ảnh sử dụng OpenCV:
 ## Cách chạy
 ```bash
 python opencv_basic_ops.py
+pip install opencv-python
 
